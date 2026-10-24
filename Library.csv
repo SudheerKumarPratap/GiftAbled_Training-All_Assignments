@@ -1,0 +1,19 @@
+Library_Name,Book Title,Author,Status
+Local_Lib,The Secret of Cryptography,Milan George,Available
+Central_Lib, Uses of AI in Industry,Albert Lee,Checked out
+Central_Lib, Uses of AI with Cryptography,Dr.T.Y.Albert,Checked out
+Local_Lib,The Secret of AI,Dr.G.K.George,Available
+
+
+District_Lib,Literature of Hindi,Dr.Hemlata Sharma,Checked out
+District_Lib,Literature and Poetry of Hindi,Dr.Punkaj Sharma,Available
+Local_Lib,The Introduction of Geography,G.R.Milan ,Checked out
+Central_Lib, Introduction of ML with AI in Industry,Dr.K.George Lee, Checked out
+
+
+Subhash_Chandra Bosh_Lib,Privacy of Cryptography,Dr.Suman,Available
+Subhash_Chandra Bosh_Lib,Privacy of Coding,Dr.J.R.Roww,Available
+District_Lib,Introduction of Economics,Dr.Rajiv Rathore,Checked out
+Subhash_Chandra Bosh_Lib,Introduction of Politics, Dr.R.D.Goyal,
+Available
+  
