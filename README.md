@@ -3,8 +3,9 @@
 ## Features are :
 
 ### In this Library Management System with MongoDB, dynamically pages have been created
-** students,libraary and fest have been kept in separate page.
-** MongoDB database has been used therein.
+### students,libraary and fest have been kept in separate page.
+### MongoDB database has been used therein.
+### following files have been created:
 * app.js
 * models.js
 * Views-
