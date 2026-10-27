@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Fest Event Planner</title>
+    <link rel="stylesheet" href="https://jsdelivr.net">
+</head>
+<body>
+    <a href="/">← Dashboard Home</a>
+    <h1>🎉 Campus Fest Management</h1>
+
+    <h3>Schedule New Fest Event</h3>
+    <form action="/fest" method="POST">
+        <input type="text" name="eventName" placeholder="Event Name" required>
+        <input type="text" name="coordinator" placeholder="Lead Coordinator" required>
+        <input type="date" name="date" required>
+        <input type="number" name="budget" placeholder="Allocated Budget ($)">
+        <button type="submit">Schedule Event</button>
+    </form>
+
+    <hr>
+    <h3>Event Timeline</h3>
+    <table>
+        <thead>
+            <tr><th>Event Name</th><th>Coordinator</th><th>Date</th><th>Budget</th><th>Actions</th></tr>
+        </thead>
+        <tbody>
+            <% fests.forEach(fest => { %>
+                <tr>
+                    <form action="/fest/<%= fest._id %>?_method=PUT" method="POST">
+                        <td><input type="text" name="eventName" value="<%= fest.eventName %>"></td>
+                        <td><input type="text" name="coordinator" value="<%= fest.coordinator %>"></td>
+                        <td><input type="date" name="date" value="<%= new Date(fest.date).toISOString().split('T')[0] %>"></td>
+                        <td><input type="number" name="budget" value="<%= fest.budget %>"></td>
+                        <td>
+                            <button type="submit" style="background-color: #2b7de9;">Update</button>
+                    </form>
+                            <form action="/fest/<%= fest._id %>?_method=DELETE" method="POST" style="display:inline;">
+                                <button type="submit" style="background-color: #d9534f;">Delete</button>
+                            </form>
+                        </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

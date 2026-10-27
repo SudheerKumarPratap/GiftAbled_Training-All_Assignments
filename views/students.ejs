@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Students Directory</title>
+    <link rel="stylesheet" href="https://jsdelivr.net">
+</head>
+<body>
+    <a href="/">← Dashboard Home</a>
+    <h1>🎓 Student Directory Management</h1>
+
+    <h3>Add New Student</h3>
+    <form action="/students" method="POST">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="text" name="rollNumber" placeholder="Roll Number" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="text" name="department" placeholder="Department">
+        <button type="submit">Create Record</button>
+    </form>
+
+    <hr>
+    <h3>Active Records</h3>
+    <table>
+        <thead>
+            <tr><th>Name</th><th>Roll Number</th><th>Email</th><th>Dept</th><th>Actions</th></tr>
+        </thead>
+        <tbody>
+            <% students.forEach(student => { %>
+                <tr>
+                    <form action="/students/<%= student._id %>?_method=PUT" method="POST">
+                        <td><input type="text" name="name" value="<%= student.name %>"></td>
+                        <td><input type="text" name="rollNumber" value="<%= student.rollNumber %>"></td>
+                        <td><input type="email" name="email" value="<%= student.email %>"></td>
+                        <td><input type="text" name="department" value="<%= student.department %>"></td>
+                        <td>
+                            <button type="submit" style="background-color: #2b7de9;">Update</button>
+                    </form>
+                            <form action="/students/<%= student._id %>?_method=DELETE" method="POST" style="display:inline;">
+                                <button type="submit" style="background-color: #d9534f;">Delete</button>
+                            </form>
+                        </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

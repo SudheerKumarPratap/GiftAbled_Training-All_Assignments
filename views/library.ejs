@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Library Inventory</title>
+    <link rel="stylesheet" href="https://jsdelivr.net">
+</head>
+<body>
+    <a href="/">← Dashboard Home</a> 
+    <h1>📚 Library Catalog Management</h1>
+
+    <h3>Add New Book Asset</h3>
+    <form action="/library" method="POST">
+        <input type="text" name="bookTitle" placeholder="Book Title" required>
+        <input type="text" name="author" placeholder="Author Name" required>
+        <input type="text" name="isbn" placeholder="ISBN Code" required>
+        <select name="status"><option value="Available">Available</option><option value="Checked out">Checked</option></select>
+        <button type="submit">Catalog Book</button>
+    </form>
+
+    <hr>
+    <h3>Asset Log</h3>
+    <table>
+        <thead>
+            <tr><th>Title</th><th>Author</th><th>ISBN</th><th>Status</th><th>Actions</th></tr>
+        </thead>
+        <tbody>
+            <% books.forEach(book => { %>
+                <tr>
+                    <form action="/library/<%= book._id %>?_method=PUT" method="POST">
+                        <td><input type="text" name="bookTitle" value="<%= book.bookTitle %>"></td>
+                        <td><input type="text" name="author" value="<%= book.author %>"></td>
+                        <td><input type="text" name="isbn" value="<%= book.isbn %>"></td>
+                        <td>
+                            <select name="status">
+                                <option value="Available" <%= book.status === 'Available' ? 'selected' : '' %>>Available</option>
+                                <option value="Checked out" <%= book.status === 'Checked out' ? 'selected' : '' %>>Checked out</option>
+                            </select>
+                        </td>
+                        <td>
+                            <button type="submit" style="background-color: #2b7de9;">Update</button>
+                    </form>
+                            <form action="/library/<%= book._id %>?_method=DELETE" method="POST" style="display:inline;">
+                                <button type="submit" style="background-color: #d9534f;">Delete</button>
+                            </form>
+                        </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
