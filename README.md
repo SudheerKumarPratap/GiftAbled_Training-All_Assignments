@@ -8,8 +8,8 @@
 ### following files have been created:
 * app.js
 * models.js
-* Views-
-* indeex.ejs
+### Views/
+* index.ejs
 * students.ejs
 * library.ejs
 * fest.ejs
