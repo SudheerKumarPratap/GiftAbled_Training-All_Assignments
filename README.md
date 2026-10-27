@@ -1,8 +1,8 @@
-## Library Management System with MongoDM
+# Library Management System with MongoDM
 
-# Features are :
+## Features are :
 
-** In this Library Management System with MongoDB, dynamically pages have been created
+### In this Library Management System with MongoDB, dynamically pages have been created
 ** students,libraary and fest have been kept in separate page.
 ** MongoDB database has been used therein.
 * app.js
