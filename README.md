@@ -38,7 +38,7 @@ Make sure Python has been installed on your local computer.
    ```
 
 4. **Launch the Application:**
-   * Once the server is running locally at `http://127.0.0.1:8000`, simply open your `index.html` file in your preferred web browser (like Google Chrome) to begin tracking your expenses.
+   * Once the server is running locally at `http://127.0.0.1:8500`, simply open your `index.html` file in your preferred web browser (like Google Chrome) to begin tracking your expenses.
 
 ## 🔌 API Documentation
 When running locally, you can view the fully interactive API documentation provided natively by FastAPI:
