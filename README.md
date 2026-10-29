@@ -16,7 +16,7 @@ The application consists of the following core components:
 * `app.js` - Client-side script handling asynchronous API requests (`fetch`) to communicate with the backend.
 
 ## 🛠️ Prerequisites
-Make sure you have Python installed on your local computer.
+Make sure Python has been installed on your local computer.
 
 ## ⚙️ Installation & Setup
 
